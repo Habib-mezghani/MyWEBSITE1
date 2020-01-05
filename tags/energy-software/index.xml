@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Energy software | MyHomePage</title>
+    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-software/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/energy-software/index.xml" rel="self" type="application/rss+xml" />
+    <description>Energy software</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 May 2018 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <title>Energy software</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-software/</link>
+    </image>
+    
+    <item>
+      <title>Energy performance simulation softwares</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/energy-performance-simulation/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/energy-performance-simulation/</guid>
+      <description>&lt;p&gt;In the context of the Energy Performance Contracting &lt;strong&gt;EPC&lt;/strong&gt;, it is essential to be able to estimate reliably the energy consumption of the building during its cycle life.
+The implementation of &lt;strong&gt;EPC&lt;/strong&gt; requires new and effective tools. One of these tools, absolutely essential, is the energy simulation software ( the following &lt;a href=&#34;https://www.buildingenergysoftwaretools.com/software-listing&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; presents full  list of the used softwares).
+Indeed, such a tool can model the energy needs of the building and evaluate its consumption.&lt;/p&gt;
+
+&lt;p&gt;For an existing building, it allows to build improvement scenarios and to study actions to improve energy performance, and to put in place a guarantee of the actual performance&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/0/Image1.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the following, I present a summary of the strengths of some softwares, commonly used by engineers in France, and that I have already used it and tested it during my university studies and my professional experience.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.bbs-logiciels.com/clima-win/&#34; target=&#34;_blank&#34;&gt;CLIMAWIN&lt;/a&gt;&lt;/strong&gt; is multi-function software that allows you to combine calculation the thermal losses and loads with the &lt;strong&gt;ASHREA method&lt;/strong&gt;, the thermal building regulations calculation &lt;strong&gt;RT2012&lt;/strong&gt; and energy consumption calculation, by using a common input variables.
+The load calculation method is based on the &lt;strong&gt;Radiant Time Series (RTS)&lt;/strong&gt;, and the thermal building regulations calculation are modeled according to the &lt;strong&gt;&lt;a href=&#34;http://construction.senova.fr/telechargements/Annexe-arrete-methode-de-calcul-TH-B-C-E-2012-CSTB.pdf&#34; target=&#34;_blank&#34;&gt;Th-BCE 2012&lt;/a&gt;&lt;/strong&gt; rules (algorithms developed by &lt;strong&gt;CSTB&lt;/strong&gt; for the RT 2012), coded by &lt;strong&gt;BBS Slama&lt;/strong&gt;.
+Compared to the &lt;strong&gt;RT calculation&lt;/strong&gt;, the building energy module allows you to enter more customized and flexible information as the site or a weather file, occupancy schedules, equipment and lighting.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://designbuilder.co.uk/&#34; target=&#34;_blank&#34;&gt;DesignBuilder&lt;/a&gt;&lt;/strong&gt; is based, since its creation, on the concept of BIM with the GBXML files and the philosophy of the heritage method for the input hypothesis variables, for instance all rooms that are created from the same block inherit the same input variables as the father block’s, hence, this method improve the engineer productivity, reduce the redundancy of the inputs information and allow a smooth evolution of the model at each phase of the project while retaining an easy ergonomics.
+Among the strengths of this software from my point view is the use of &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/&#34; target=&#34;_blank&#34;&gt;EnergyPlus&lt;/a&gt;&lt;/strong&gt; calculation engine, which is a calculation engine developed by the &lt;strong&gt;DOE&lt;/strong&gt; (US Department of Energy), which allows for a coupled simulation of the building and HVAC systems and natural and artificial lighting.
+&lt;em&gt;The EnergyPlus program is a collection of many program modules that work together to calculate the energy required for heating and cooling a building using a variety of systems and energy sources. It does this by simulating the building and associated energy systems when they are exposed to different environmental and operating conditions.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.izuba.fr/logiciels/outils-logiciels/&#34; target=&#34;_blank&#34;&gt;Comfie pléiades&lt;/a&gt;&lt;/strong&gt; is a software for the design and, energy and environmental assessment of the building, developed by &lt;strong&gt;Izuba Energies&lt;/strong&gt;. The PLEIADES MODELEUR, the graphical modeler, allows a quick input of the building envelope, its thermal characteristics, masks, systems and the scenario usage.
+The thermal calculation is based on the Comfie engine, which was developed by the Energy Efficiency Systems Center of the &lt;strong&gt;Ecole de Mines de Paris&lt;/strong&gt;. The calculation of the natural lighting is based on the &lt;strong&gt;Radiance software&lt;/strong&gt;. It is based on international recognized methods for building equipment sizing as the &lt;strong&gt;EN 12831 standard&lt;/strong&gt; for heating, and the &lt;strong&gt;ASHRAE RTS (the Radiant Time Series) method&lt;/strong&gt; for cooling and air conditioning.
+In 2016, &lt;strong&gt;&lt;a href=&#34;http://www.kocliko.co/amapola/&#34; target=&#34;_blank&#34;&gt;Kolico&lt;/a&gt;&lt;/strong&gt;, a start-up founded by 2 researchers from the &lt;strong&gt;Ecole des Mines de Paris&lt;/strong&gt;, developed a specific software dedicated for &lt;strong&gt;Comfie Pléiades&lt;/strong&gt; models allowing to automatize multiple calculations in order to ease the sensitivity analysis, uncertainty analysis, and the cost optimization.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

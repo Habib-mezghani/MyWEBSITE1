@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | MyHomePage</title>
+    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/python/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Jul 2019 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <title>Python</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/python/</link>
+    </image>
+    
+    <item>
+      <title>How to consult EPW file with Python</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/how-to-consult-epw-file-with-python/</link>
+      <pubDate>Fri, 05 Jul 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/how-to-consult-epw-file-with-python/</guid>
+      <description>&lt;p&gt;Weather file is considered as the basic input for energy modelling engineer, it presents a dataset of one year for the different Physical size. &lt;strong&gt;Energy model calibration&lt;/strong&gt; often uses actual measured weather data, hence, in order to have energy model that mimics the actual energy and thermal behavior of the studied building, the weather file used in the simulation have to be modified according to the recorded and the real data.&lt;/p&gt;
+
+&lt;p&gt;An &lt;strong&gt;EPW file (EnergyPlus weather file)&lt;/strong&gt; can be divided into two parts: header and weather data. The first eight lines of a standard &lt;strong&gt;EPW file&lt;/strong&gt; present the header which contains data of location, design conditions, typical/extreme periods, ground temperatures, holidays/daylight savings, data periods and other comments. The second part presents the hourly data, the main columns of the data set are detailed &lt;strong&gt;&lt;a href=&#34;https://bigladdersoftware.com/epx/docs/8-3/auxiliary-programs/energyplus-weather-file-epw-data-dictionary.html#data-field-descriptions&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/rbuffat/pyepw&#34; target=&#34;_blank&#34;&gt;Pyepw&lt;/a&gt;&lt;/strong&gt; is python package that provides the flexibility to read visualize or, replace the core weather data.
+The installation can be done by the simple command on the cmd &lt;strong&gt;pip install pyepw&lt;/strong&gt;. the Python notebook used in the following can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Python-EPW&#34; target=&#34;_blank&#34;&gt;Github link&lt;/a&gt;&lt;/strong&gt;
+In order to read the weather file first of all, we must create an instance of the class &lt;strong&gt;EPW()&lt;/strong&gt; and apply the read function with the name of the weather file (with the directory location) as input.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pyepw.epw import EPW
+epw = EPW()
+epw.read(r&amp;quot;downloadFile.epw&amp;quot;) # weather file of Bordeaux in France
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The description related to the weather file location, can be accessed by these lines, note that location is another class presented as field of the &lt;strong&gt;EWP()&lt;/strong&gt; class.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(epw.location.country)
+print(epw.location.latitude)
+print(epw.location.longitude)
+print(epw.location.elevation)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to read the hourly data of the dry temperature or the dew temperature, we must iterate over the class weatherdata which are the fields of the created EWP class and access to the field dry_bulb_temperature, dew_point_temperature.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for wd in epw.weatherdata:
+    print (wd.dry_bulb_temperature, &#39;   &#39;, wd.dew_point_temperature)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To change and save the weather file from recorded data, we must change each field of the &lt;strong&gt;epw.weatherdata&lt;/strong&gt; class. In the following example, let’s assume that we have the recorded data of the dry temperature the relative humidity and the wind speed, these data are presented as lists of random value (just for demonstration)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import random
+
+Temp_data=[round(random.uniform(-5,50), 2) for i in range(8760)] #generate new data for temperature
+Humidity_data=[round(random.uniform(5,100), 2) for i in range(8760)]  #generate new data for relative humidity
+wind_data=[round(random.uniform(0,15), 2) for i in range(8760)] #generate new data for wind speed
+i=0
+for wd in epw.weatherdata:
+    wd.dry_bulb_temperature = Temp_data[i]
+    wd.relative_humidity =Humidity_data[i]
+    wd.wind_speed =wind_data[i]
+    i=i+1
+    
+epw.save(r&amp;quot;new_file.epw&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s try to construct a data frame by using the weather file, we can use dummies lists to store the data of each iteration over the &lt;strong&gt;epw.weatherdata&lt;/strong&gt; fields and next can we create a &lt;strong&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html&#34; target=&#34;_blank&#34;&gt;Pandas DataFrame&lt;/a&gt;&lt;/strong&gt; from these lists.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def Create_df_weather():
+
+    #read_ewp_as_link(Link_weather)
+    epw = EPW()
+    epw.read(r&amp;quot;downloadFile.epw&amp;quot;)
+    #print(epw.location.country)
+    #lat = epw.location.latitude
+    #print(epw.location.longitude)
+    #print(epw.location.elevation)
+    year = []
+    month = []
+    day = []
+    date=[]
+    hour = []
+    seconde = []
+    dry_bulb_temperature = []
+    dew_point_temperature = []
+    relative_humidity = []
+    atmospheric_station_pressure = []
+    global_horizontal_radiation = []
+    direct_normal_radiation = []
+    diffuse_horizontal_radiation = []
+    wind_direction = []
+    wind_speed = []
+    total_sky_cover = []
+    opaque_sky_cover = []
+    precipitable_water = []
+   
+    for wd in epw.weatherdata:
+        year.append(wd.year)
+        month.append(wd.month)
+        day.append(wd.day)
+        hour.append(wd.hour)
+        dry_bulb_temperature.append(wd.dry_bulb_temperature)
+        dew_point_temperature.append(wd.dew_point_temperature)
+        relative_humidity.append(wd.relative_humidity)
+        atmospheric_station_pressure.append(wd.atmospheric_station_pressure)
+        global_horizontal_radiation.append(wd.global_horizontal_radiation)
+        direct_normal_radiation.append(wd.direct_normal_radiation)
+        diffuse_horizontal_radiation.append(wd.global_horizontal_radiation)
+        wind_direction.append(wd.wind_direction)
+        wind_speed.append(wd.wind_speed)
+        total_sky_cover.append(wd.total_sky_cover)
+        opaque_sky_cover.append(wd.opaque_sky_cover)
+        precipitable_water.append(wd.precipitable_water)
+        
+    
+    data_weather = pd.DataFrame(
+        [year, month, day, hour, dry_bulb_temperature, dew_point_temperature, relative_humidity,
+         atmospheric_station_pressure, global_horizontal_radiation, direct_normal_radiation, diffuse_horizontal_radiation,
+         wind_direction,
+         wind_speed, total_sky_cover, opaque_sky_cover, precipitable_water])
+    
+    data_weather = data_weather.transpose()
+    data_weather.columns = [&#39;year&#39;, &#39;month&#39;, &#39;day&#39;, &#39;hour&#39;, &#39;dry_bulb_temperature&#39;, &#39;dew_point_temperature&#39;,
+                            &#39;relative_humidity&#39;,
+                            &#39;atmospheric_station_pressure&#39;, &#39;global_horizontal_radiation&#39;, &#39;direct_normal_radiation&#39;,
+                            &#39;diffuse_horizontal_radiation&#39;,
+                            &#39;wind_direction&#39;, &#39;wind_speed&#39;, &#39;total_sky_cover&#39;, &#39;opaque_sky_cover&#39;, &#39;precipitable_water&#39;]
+    
+
+    return data_weather
+
+df=Create_df_weather()
+df.head()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/4/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we have the dataframe, You can plot data directly from your DataFrame using the &lt;strong&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html&#34; target=&#34;_blank&#34;&gt;plot() method&lt;/a&gt;&lt;/strong&gt; which is function as part of the  Pandas DataFrame class&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;ploting the dry and the dew temperature&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[[&#39;dew_point_temperature&#39;,&#39;dry_bulb_temperature&#39;]].plot(figsize=(15,5))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/4/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Presenting the monthly data of the solar radiation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_month=df.groupby([&#39;month&#39;]).sum()[[&#39;global_horizontal_radiation&#39;,&#39;direct_normal_radiation&#39;,&#39;diffuse_horizontal_radiation&#39;]]/1000
+df_month.plot(kind=&#39;bar&#39;,figsize=(15,5)) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/4/5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Presenting the main statistical value of the dry temperature (min, max, mean) (by month)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df1=df.groupby([&#39;month&#39;]).max()[[&#39;dry_bulb_temperature&#39;]]
+df2=df.groupby([&#39;month&#39;]).mean()[[&#39;dry_bulb_temperature&#39;]]
+df3=df.groupby([&#39;month&#39;]).min()[[&#39;dry_bulb_temperature&#39;]]
+ax = plt.gca()
+df1.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
+df2.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
+df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/4/6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EnergyPlus with Python</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/energy-plus-with-python/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/energy-plus-with-python/</guid>
+      <description>&lt;p&gt;EnergyPlus is the US Department of Energy’s flagship program for building energy modeling. Developed by a team of researchers, engineers, it is freely available under an open source license at this &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The EnergyPlus program models heating, cooling, lighting, ventilation, other energy flows, by using a collection of many program modules that work together to calculate the energy required for heating and cooling a building using a variety of systems and energy sources. It does this by simulating the building and associated energy systems when they are exposed to different environmental and operating conditions. The core of the simulation is a model of the building that is based on fundamental heat balance principles.
+&lt;img src=&#34;img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the following, we focus on how we can extract energy Plus model from design builder and run it using python in customized approach with Energy plus core engine. The Notebook used is available on this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/EnergyPlus-Python&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Exporting IDF Files&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open your &lt;strong&gt;DesignBuilder&lt;/strong&gt; dsb model file (let’s take the Atrium model proposed by design builder).&lt;/li&gt;
+&lt;li&gt;Click on the File &amp;gt; Export &amp;gt; Export EnergyPlus or DBSim input file &amp;gt; Simulation menu option.&lt;/li&gt;
+&lt;li&gt;Open the file with text editor in order to check the Energy Plus version, note that the energy plus version is that is embedded in design builder&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Download Energy Plus and IDF conversion&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The next step is to download the desired energy plus engine &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/downloads&#34; target=&#34;_blank&#34;&gt;from this link&lt;/a&gt;&lt;/strong&gt;, let’s assume that the energy plus Engine downloaded and installed is the &lt;strong&gt;&lt;a href=&#34;https://github.com/NREL/EnergyPlus/releases/tag/v8.9.0&#34; target=&#34;_blank&#34;&gt;v8.9.0&lt;/a&gt;&lt;/strong&gt;
+The next step is to convert you IDF file from the 8.6 version to the 8.9 version, in order to be compatible with the installed Energy plus Engine.&lt;/p&gt;
+
+&lt;p&gt;To do that:&lt;/p&gt;
+
+&lt;p&gt;1-Navigate to &lt;strong&gt;IDFVersionUpdated&lt;/strong&gt; which is located at C:\EnergyPlusV8-9-0\PreProcess\IDFVersionUpdater (if we assume that the energy plus was installed at the C:\ folder)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2- Click on Choose File to update  and browse to the IDF file and choose the new version as 8.9.0
+&lt;img src=&#34;img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3-Once the conversion process is finished, a new IDF file is created
+&lt;img src=&#34;img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Installing and using EPPY (Python Package)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://pypi.org/project/eppy/&#34; target=&#34;_blank&#34;&gt;Eppy&lt;/a&gt;&lt;/strong&gt; is a scripting language for &lt;strong&gt;EnergyPlus&lt;/strong&gt; idf files, and &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files. Eppy is written in the programming language Python. As a result it takes full advantage of the rich data structure and idioms that are avaliable in python. You can programmatically navigate, search, and modify &lt;strong&gt;EnergyPlus&lt;/strong&gt; idf files using eppy. The power of using a scripting language allows you to do the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make a large number of changes in an idf file with a few lines of eppy code.&lt;/li&gt;
+&lt;li&gt;Use conditions and filters when making changes to an idf file&lt;/li&gt;
+&lt;li&gt;Make changes to multiple idf files.&lt;/li&gt;
+&lt;li&gt;Read data from the output files of an E+ simulation run.&lt;/li&gt;
+&lt;li&gt;Based to the results of an E+ simulation run, generate the input file for the next simulation run.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To install Eppy package, run in your cmd window &lt;strong&gt;pip install eppy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to use this python package, we need essentially 3 files:&lt;/p&gt;
+
+&lt;p&gt;1-  The &lt;strong&gt;IDF file&lt;/strong&gt; as done above.&lt;/p&gt;
+
+&lt;p&gt;2-  The &lt;strong&gt;IDD file&lt;/strong&gt; is located in the folder of the Energy Plus&lt;/p&gt;
+
+&lt;p&gt;3-  The &lt;strong&gt;EPW file&lt;/strong&gt; is the weather file used for the simulation&lt;/p&gt;
+
+&lt;p&gt;We propose to put each file in a folder&lt;br /&gt;
+&lt;img src=&#34;img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First of all, let’s create an IDF class using the package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from eppy import modeleditor
+from eppy.modeleditor import IDF
+iddfile = &amp;quot;Example\Resources\iddfiles\Energy+.idd&amp;quot;
+fname1 = &amp;quot;Example\Resources\idffiles\Model_Design_builder.idf&amp;quot;
+Weather= &amp;quot;Example\Resources\WeatherDATA\FRA_Paris.epw&amp;quot;
+IDF.setiddname(iddfile)
+idf1 = IDF(fname1,Weather)
+idf1.printidf()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The IDF class is constructed with different objects, we can iterate over the IDF class in order to Know name of the different objects.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in idf1.idfobjects:
+	print (x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Among these objects, the most important that can be modified during energy simulation studies are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;LIGHTS&amp;rsquo;]&lt;/strong&gt; in order to control the light load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;PEOPLE&amp;rsquo;]&lt;/strong&gt; in order to control the people load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;ELECTRICEQUIPMENT&amp;rsquo;]&lt;/strong&gt; in order to control the equipment load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;ZONEINFILTRATION:DESIGNFLOWRATE&amp;rsquo;]&lt;/strong&gt; in order to control the infiltration rate in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;MATERIAL&amp;rdquo;]&lt;/strong&gt; in order to control the defined material.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;CONSTRUCTION&amp;rdquo;]&lt;/strong&gt; in order to control the layer used to construct each wall on the building.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;WINDOWMATERIAL:GLAZING&amp;rdquo;]&lt;/strong&gt; in order to control the proprieties of the glazed material used.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;BUILDINGSURFACE:DETAILED&amp;rsquo;]&lt;/strong&gt; in order to control coordinate and the assigned material for each wall.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Modify the IDF file&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s assume that we want that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The density of people equals 5 peoples in each zone.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The density of light equals 6W/m².
++The thickness of the concrete material equal 0.25 m.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;peoples=idf1.idfobjects[&#39;PEOPLE&#39;]
+for people in peoples:
+people.Number_of_People_Calculation_Method=&#39;People&#39;
+people.Number_of_People=5
+print (idf1.idfobjects[&#39;PEOPLE&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;LIGHTS=idf1.idfobjects[&#39;LIGHTS&#39;]
+for LIGHT in LIGHTS:
+LIGHT.Design_Level_Calculation_Method=&#39;Watts/Area&#39;
+LIGHT.Watts_per_Zone_Floor_Area=6
+print (idf1.idfobjects[&#39;LIGHTS&#39;]) 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for material in idf1.idfobjects[&amp;quot;MATERIAL&amp;quot;]:
+    if material.Name.find(&#39;Concrete&#39;)&amp;gt;0:
+        material.Thickness=0.25
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Run E+ simulation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to run a simulation with energy plus, we use only a simple command as &lt;strong&gt;EnergyPlus&lt;/strong&gt; can be called on the &lt;strong&gt;cmd&lt;/strong&gt; Windows.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Import subprocess
+idf1.saveas(r&amp;quot;out.idf&amp;quot;)
+fname1 = &amp;quot;out.idf&amp;quot;
+subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weather +&amp;quot; -r &amp;quot; +fname1, shell=True)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All the &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files are located in the folder&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Download Weather file with Python </title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</guid>
+      <description>&lt;p&gt;Weather file is considered as the basic input for energy modelling engineer, it represents 1 year of hourly (8760) weather data values, this data set are commonly used by energy engineers for modelling renewable energy systems and assess the building heating and cooling needs, as it provides a typical description of the main physical properties as the temperature, the humidity, solar radiation, wind speed… for the concerned region.&lt;/p&gt;
+
+&lt;p&gt;The Energy Plus weather file is commonly used by engineer as it is provided by Energy plus, easy to download and suitable for almost energy simulation softwares.&lt;/p&gt;
+
+&lt;p&gt;In this article we will try to build a python application that allow as to download the energy plus weather file without accessing to energy Plus website. the python code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can notice that in EnergyPlus website there is &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/weather&#34; target=&#34;_blank&#34;&gt;cartography&lt;/a&gt;&lt;/strong&gt; presenting the locations where the EnergyPlus weather files are available. The list of these locations can be downloaded as &lt;strong&gt;json format&lt;/strong&gt; from this link &lt;strong&gt;&lt;a href=&#34;https://raw.githubusercontent.com/NREL/EnergyPlus/develop/weather/master.geojson&#34; target=&#34;_blank&#34;&gt;NREL Github&lt;/a&gt;&lt;/strong&gt;.
+If we open this file with Notepad, we notice that each point/location is presented by these lines which is repeated every 15 lines.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Moreover, in the file name, we notice that it is divided in 2 parts which are the country code with three letters and the city name, for example &lt;strong&gt;&amp;ldquo;FRA_Paris.Orly.071490_IWEC&amp;rdquo;&lt;/strong&gt; the &lt;strong&gt;FRA&lt;/strong&gt; is the country code for &lt;strong&gt;France&lt;/strong&gt; and &lt;strong&gt;Paris.Orly&lt;/strong&gt; is the name of the city (location).
+First of all, we can easily read this file line by line with python&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import pandas as pd
+import re
+filename = &amp;quot;master.geojson.txt&amp;quot;
+with open(filename) as f:
+    line = f.readlines()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We began with the first city, we can access to the country code and the city name by some &lt;strong&gt;split&lt;/strong&gt; functions =&amp;gt; the output is IND_Kota&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;line[9].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][2:-3].split(&amp;quot;.&amp;quot;)[0]
+&amp;gt;&amp;gt; IND_Kota
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the same methodology we can extract the EWP URL file and the (X,Y) coordinates.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Ewp_URL=&#39;https://&#39;+line[9].split(&amp;quot;:&amp;quot;)[2][2:-29]
+X_coor=float(line[15].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[0])
+Y_coor float(line[15].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[1])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With an iterative loop through all the line of the file we can append for each location the information concerning: the country ID, the city name, the EPW download URl, X_coordinate and the Y_coordinate, and store this information as data frame&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import pandas as pd
+import re
+
+filename = &amp;quot;master.geojson.txt&amp;quot;
+with open(filename) as f:
+    line = f.readlines()
+
+# Show the file contents line by line.
+Country=[]
+city=[]
+ewp=[]
+X=[]
+Y=[]
+i=8 # first line for the city and country name
+j=9 # first line for the EPW file
+k=15 # first line for the X_coord and Y_coord
+
+while i&amp;lt;len(line):
+    a=line[i].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][2:-3].split(&amp;quot;.&amp;quot;)[0].split(&amp;quot;_&amp;quot;)
+
+    if len(a)&amp;gt;2:
+        a[1]=a[1]+&amp;quot; &amp;quot;+a[2]
+        a.remove(a[2])
+
+    if len(a)&amp;gt;1:
+        Country.append(a[0])
+        city.append(a[1])
+        ewp.append(&#39;https://&#39;+line[j].split(&amp;quot;:&amp;quot;)[2][2:-29])
+        X.append(float(line[k].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[0]))
+        Y.append(float(line[k].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[1]))
+    i=i+15 #next location
+    j=j+15 #next location
+    k=k+15 #next location
+
+data=pd.DataFrame({&#39;Country&#39;:Country,&#39;city&#39;:city, &#39;EWP&#39;:ewp,&#39;coorX&#39;:X,&#39;coordY&#39;:Y})
+data.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the exported data set is presented as bellow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to add the full country name and the continent name, as first step we can download as csv file from this &lt;strong&gt;&lt;a href=&#34;https://datahub.io/JohnSnowLabs/country-and-continent-codes-list&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt; a &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/country-and-continent-codes-list-csv_csv.csv&#34; target=&#34;_blank&#34;&gt;database&lt;/a&gt;&lt;/strong&gt; that consists of list of countries by continent, and then, we merge this dataset with the data set extracted form the EnergyPlus data based on the country_id.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;country_data=pd.read_csv(&#39;country-and-continent-codes-list-csv_csv.csv&#39;,sep=&#39;,&#39;)[[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Three_Letter_Country_Code&#39;]]
+
+country_data.columns=[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Country_ID&#39;]
+
+result = pd.merge(data_E_PLUS, country_data, on=[&#39;Country_ID&#39;])
+result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we have this dataset that we can use &lt;strong&gt;&lt;a href=&#34;https://plot.ly/dash/&#34; target=&#34;_blank&#34;&gt;dash&lt;/a&gt;&lt;/strong&gt; which is python framework  that allow to built web app.&lt;/p&gt;
+
+&lt;p&gt;In our case we use the widget map in order to present the different location referring to the X and Y coordinate, in addition, a conditioned selectors to choose the location based on the continent, the country and the chosen city. The full code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/weather_link_download.py&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt; and the output is similar to bellow.
+&lt;img src=&#34;img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

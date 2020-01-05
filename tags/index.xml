@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags | MyHomePage</title>
+    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Jul 2019 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <title>Tags</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/</link>
+    </image>
+    
+    <item>
+      <title>EPW</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/epw/</link>
+      <pubDate>Fri, 05 Jul 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/epw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/python/</link>
+      <pubDate>Fri, 05 Jul 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EnergyPlus</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energyplus/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/energyplus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Energy Plus</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-plus/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-plus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Energy Modelling</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-modelling/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-modelling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Energy software</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-software/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-software/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EnergyPlus | MyHomePage</title>
+    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energyplus/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/energyplus/index.xml" rel="self" type="application/rss+xml" />
+    <description>EnergyPlus</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 27 May 2019 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <title>EnergyPlus</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energyplus/</link>
+    </image>
+    
+    <item>
+      <title>EnergyPlus with Python</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/energy-plus-with-python/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/energy-plus-with-python/</guid>
+      <description>&lt;p&gt;EnergyPlus is the US Department of Energy’s flagship program for building energy modeling. Developed by a team of researchers, engineers, it is freely available under an open source license at this &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The EnergyPlus program models heating, cooling, lighting, ventilation, other energy flows, by using a collection of many program modules that work together to calculate the energy required for heating and cooling a building using a variety of systems and energy sources. It does this by simulating the building and associated energy systems when they are exposed to different environmental and operating conditions. The core of the simulation is a model of the building that is based on fundamental heat balance principles.
+&lt;img src=&#34;img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the following, we focus on how we can extract energy Plus model from design builder and run it using python in customized approach with Energy plus core engine. The Notebook used is available on this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/EnergyPlus-Python&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Exporting IDF Files&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open your &lt;strong&gt;DesignBuilder&lt;/strong&gt; dsb model file (let’s take the Atrium model proposed by design builder).&lt;/li&gt;
+&lt;li&gt;Click on the File &amp;gt; Export &amp;gt; Export EnergyPlus or DBSim input file &amp;gt; Simulation menu option.&lt;/li&gt;
+&lt;li&gt;Open the file with text editor in order to check the Energy Plus version, note that the energy plus version is that is embedded in design builder&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Download Energy Plus and IDF conversion&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The next step is to download the desired energy plus engine &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/downloads&#34; target=&#34;_blank&#34;&gt;from this link&lt;/a&gt;&lt;/strong&gt;, let’s assume that the energy plus Engine downloaded and installed is the &lt;strong&gt;&lt;a href=&#34;https://github.com/NREL/EnergyPlus/releases/tag/v8.9.0&#34; target=&#34;_blank&#34;&gt;v8.9.0&lt;/a&gt;&lt;/strong&gt;
+The next step is to convert you IDF file from the 8.6 version to the 8.9 version, in order to be compatible with the installed Energy plus Engine.&lt;/p&gt;
+
+&lt;p&gt;To do that:&lt;/p&gt;
+
+&lt;p&gt;1-Navigate to &lt;strong&gt;IDFVersionUpdated&lt;/strong&gt; which is located at C:\EnergyPlusV8-9-0\PreProcess\IDFVersionUpdater (if we assume that the energy plus was installed at the C:\ folder)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2- Click on Choose File to update  and browse to the IDF file and choose the new version as 8.9.0
+&lt;img src=&#34;img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3-Once the conversion process is finished, a new IDF file is created
+&lt;img src=&#34;img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Installing and using EPPY (Python Package)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://pypi.org/project/eppy/&#34; target=&#34;_blank&#34;&gt;Eppy&lt;/a&gt;&lt;/strong&gt; is a scripting language for &lt;strong&gt;EnergyPlus&lt;/strong&gt; idf files, and &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files. Eppy is written in the programming language Python. As a result it takes full advantage of the rich data structure and idioms that are avaliable in python. You can programmatically navigate, search, and modify &lt;strong&gt;EnergyPlus&lt;/strong&gt; idf files using eppy. The power of using a scripting language allows you to do the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make a large number of changes in an idf file with a few lines of eppy code.&lt;/li&gt;
+&lt;li&gt;Use conditions and filters when making changes to an idf file&lt;/li&gt;
+&lt;li&gt;Make changes to multiple idf files.&lt;/li&gt;
+&lt;li&gt;Read data from the output files of an E+ simulation run.&lt;/li&gt;
+&lt;li&gt;Based to the results of an E+ simulation run, generate the input file for the next simulation run.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To install Eppy package, run in your cmd window &lt;strong&gt;pip install eppy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to use this python package, we need essentially 3 files:&lt;/p&gt;
+
+&lt;p&gt;1-  The &lt;strong&gt;IDF file&lt;/strong&gt; as done above.&lt;/p&gt;
+
+&lt;p&gt;2-  The &lt;strong&gt;IDD file&lt;/strong&gt; is located in the folder of the Energy Plus&lt;/p&gt;
+
+&lt;p&gt;3-  The &lt;strong&gt;EPW file&lt;/strong&gt; is the weather file used for the simulation&lt;/p&gt;
+
+&lt;p&gt;We propose to put each file in a folder&lt;br /&gt;
+&lt;img src=&#34;img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First of all, let’s create an IDF class using the package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from eppy import modeleditor
+from eppy.modeleditor import IDF
+iddfile = &amp;quot;Example\Resources\iddfiles\Energy+.idd&amp;quot;
+fname1 = &amp;quot;Example\Resources\idffiles\Model_Design_builder.idf&amp;quot;
+Weather= &amp;quot;Example\Resources\WeatherDATA\FRA_Paris.epw&amp;quot;
+IDF.setiddname(iddfile)
+idf1 = IDF(fname1,Weather)
+idf1.printidf()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The IDF class is constructed with different objects, we can iterate over the IDF class in order to Know name of the different objects.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in idf1.idfobjects:
+	print (x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Among these objects, the most important that can be modified during energy simulation studies are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;LIGHTS&amp;rsquo;]&lt;/strong&gt; in order to control the light load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;PEOPLE&amp;rsquo;]&lt;/strong&gt; in order to control the people load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;ELECTRICEQUIPMENT&amp;rsquo;]&lt;/strong&gt; in order to control the equipment load in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;ZONEINFILTRATION:DESIGNFLOWRATE&amp;rsquo;]&lt;/strong&gt; in order to control the infiltration rate in each zone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;MATERIAL&amp;rdquo;]&lt;/strong&gt; in order to control the defined material.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;CONSTRUCTION&amp;rdquo;]&lt;/strong&gt; in order to control the layer used to construct each wall on the building.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;ldquo;WINDOWMATERIAL:GLAZING&amp;rdquo;]&lt;/strong&gt; in order to control the proprieties of the glazed material used.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;idf1.idfobjects[&amp;lsquo;BUILDINGSURFACE:DETAILED&amp;rsquo;]&lt;/strong&gt; in order to control coordinate and the assigned material for each wall.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Modify the IDF file&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s assume that we want that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The density of people equals 5 peoples in each zone.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The density of light equals 6W/m².
++The thickness of the concrete material equal 0.25 m.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;peoples=idf1.idfobjects[&#39;PEOPLE&#39;]
+for people in peoples:
+people.Number_of_People_Calculation_Method=&#39;People&#39;
+people.Number_of_People=5
+print (idf1.idfobjects[&#39;PEOPLE&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;LIGHTS=idf1.idfobjects[&#39;LIGHTS&#39;]
+for LIGHT in LIGHTS:
+LIGHT.Design_Level_Calculation_Method=&#39;Watts/Area&#39;
+LIGHT.Watts_per_Zone_Floor_Area=6
+print (idf1.idfobjects[&#39;LIGHTS&#39;]) 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for material in idf1.idfobjects[&amp;quot;MATERIAL&amp;quot;]:
+    if material.Name.find(&#39;Concrete&#39;)&amp;gt;0:
+        material.Thickness=0.25
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Run E+ simulation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to run a simulation with energy plus, we use only a simple command as &lt;strong&gt;EnergyPlus&lt;/strong&gt; can be called on the &lt;strong&gt;cmd&lt;/strong&gt; Windows.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Import subprocess
+idf1.saveas(r&amp;quot;out.idf&amp;quot;)
+fname1 = &amp;quot;out.idf&amp;quot;
+subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weather +&amp;quot; -r &amp;quot; +fname1, shell=True)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All the &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files are located in the folder&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

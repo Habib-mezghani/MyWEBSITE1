@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Energy Plus | MyHomePage</title>
+    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-plus/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/energy-plus/index.xml" rel="self" type="application/rss+xml" />
+    <description>Energy Plus</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 17 Feb 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <title>Energy Plus</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/energy-plus/</link>
+    </image>
+    
+    <item>
+      <title>Download Weather file with Python </title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</guid>
+      <description>&lt;p&gt;Weather file is considered as the basic input for energy modelling engineer, it represents 1 year of hourly (8760) weather data values, this data set are commonly used by energy engineers for modelling renewable energy systems and assess the building heating and cooling needs, as it provides a typical description of the main physical properties as the temperature, the humidity, solar radiation, wind speed… for the concerned region.&lt;/p&gt;
+
+&lt;p&gt;The Energy Plus weather file is commonly used by engineer as it is provided by Energy plus, easy to download and suitable for almost energy simulation softwares.&lt;/p&gt;
+
+&lt;p&gt;In this article we will try to build a python application that allow as to download the energy plus weather file without accessing to energy Plus website. the python code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can notice that in EnergyPlus website there is &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/weather&#34; target=&#34;_blank&#34;&gt;cartography&lt;/a&gt;&lt;/strong&gt; presenting the locations where the EnergyPlus weather files are available. The list of these locations can be downloaded as &lt;strong&gt;json format&lt;/strong&gt; from this link &lt;strong&gt;&lt;a href=&#34;https://raw.githubusercontent.com/NREL/EnergyPlus/develop/weather/master.geojson&#34; target=&#34;_blank&#34;&gt;NREL Github&lt;/a&gt;&lt;/strong&gt;.
+If we open this file with Notepad, we notice that each point/location is presented by these lines which is repeated every 15 lines.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Moreover, in the file name, we notice that it is divided in 2 parts which are the country code with three letters and the city name, for example &lt;strong&gt;&amp;ldquo;FRA_Paris.Orly.071490_IWEC&amp;rdquo;&lt;/strong&gt; the &lt;strong&gt;FRA&lt;/strong&gt; is the country code for &lt;strong&gt;France&lt;/strong&gt; and &lt;strong&gt;Paris.Orly&lt;/strong&gt; is the name of the city (location).
+First of all, we can easily read this file line by line with python&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import pandas as pd
+import re
+filename = &amp;quot;master.geojson.txt&amp;quot;
+with open(filename) as f:
+    line = f.readlines()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We began with the first city, we can access to the country code and the city name by some &lt;strong&gt;split&lt;/strong&gt; functions =&amp;gt; the output is IND_Kota&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;line[9].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][2:-3].split(&amp;quot;.&amp;quot;)[0]
+&amp;gt;&amp;gt; IND_Kota
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the same methodology we can extract the EWP URL file and the (X,Y) coordinates.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Ewp_URL=&#39;https://&#39;+line[9].split(&amp;quot;:&amp;quot;)[2][2:-29]
+X_coor=float(line[15].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[0])
+Y_coor float(line[15].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[1])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With an iterative loop through all the line of the file we can append for each location the information concerning: the country ID, the city name, the EPW download URl, X_coordinate and the Y_coordinate, and store this information as data frame&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import pandas as pd
+import re
+
+filename = &amp;quot;master.geojson.txt&amp;quot;
+with open(filename) as f:
+    line = f.readlines()
+
+# Show the file contents line by line.
+Country=[]
+city=[]
+ewp=[]
+X=[]
+Y=[]
+i=8 # first line for the city and country name
+j=9 # first line for the EPW file
+k=15 # first line for the X_coord and Y_coord
+
+while i&amp;lt;len(line):
+    a=line[i].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][2:-3].split(&amp;quot;.&amp;quot;)[0].split(&amp;quot;_&amp;quot;)
+
+    if len(a)&amp;gt;2:
+        a[1]=a[1]+&amp;quot; &amp;quot;+a[2]
+        a.remove(a[2])
+
+    if len(a)&amp;gt;1:
+        Country.append(a[0])
+        city.append(a[1])
+        ewp.append(&#39;https://&#39;+line[j].split(&amp;quot;:&amp;quot;)[2][2:-29])
+        X.append(float(line[k].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[0]))
+        Y.append(float(line[k].split(&amp;quot;:&amp;quot;)[1].split(&amp;quot;\n&amp;quot;)[0][1:][1:-1].split(&amp;quot;,&amp;quot;)[1]))
+    i=i+15 #next location
+    j=j+15 #next location
+    k=k+15 #next location
+
+data=pd.DataFrame({&#39;Country&#39;:Country,&#39;city&#39;:city, &#39;EWP&#39;:ewp,&#39;coorX&#39;:X,&#39;coordY&#39;:Y})
+data.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the exported data set is presented as bellow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to add the full country name and the continent name, as first step we can download as csv file from this &lt;strong&gt;&lt;a href=&#34;https://datahub.io/JohnSnowLabs/country-and-continent-codes-list&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt; a &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/country-and-continent-codes-list-csv_csv.csv&#34; target=&#34;_blank&#34;&gt;database&lt;/a&gt;&lt;/strong&gt; that consists of list of countries by continent, and then, we merge this dataset with the data set extracted form the EnergyPlus data based on the country_id.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;country_data=pd.read_csv(&#39;country-and-continent-codes-list-csv_csv.csv&#39;,sep=&#39;,&#39;)[[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Three_Letter_Country_Code&#39;]]
+
+country_data.columns=[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Country_ID&#39;]
+
+result = pd.merge(data_E_PLUS, country_data, on=[&#39;Country_ID&#39;])
+result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we have this dataset that we can use &lt;strong&gt;&lt;a href=&#34;https://plot.ly/dash/&#34; target=&#34;_blank&#34;&gt;dash&lt;/a&gt;&lt;/strong&gt; which is python framework  that allow to built web app.&lt;/p&gt;
+
+&lt;p&gt;In our case we use the widget map in order to present the different location referring to the X and Y coordinate, in addition, a conditioned selectors to choose the location based on the continent, the country and the chosen city. The full code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/weather_link_download.py&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt; and the output is similar to bellow.
+&lt;img src=&#34;img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
