@@ -131,7 +131,7 @@ df.head()
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/4/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we have the dataframe, You can plot data directly from your DataFrame using the &lt;strong&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html&#34; target=&#34;_blank&#34;&gt;plot() method&lt;/a&gt;&lt;/strong&gt; which is function as part of the  Pandas DataFrame class&lt;/p&gt;
 
@@ -140,7 +140,7 @@ df.head()
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[[&#39;dew_point_temperature&#39;,&#39;dry_bulb_temperature&#39;]].plot(figsize=(15,5))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/4/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Presenting the monthly data of the solar radiation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -148,7 +148,7 @@ df.head()
 df_month.plot(kind=&#39;bar&#39;,figsize=(15,5)) 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/4/5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Presenting the main statistical value of the dry temperature (min, max, mean) (by month)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -161,7 +161,7 @@ df2.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
 df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/4/6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -173,7 +173,7 @@ df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
       <description>&lt;p&gt;EnergyPlus is the US Department of Energy’s flagship program for building energy modeling. Developed by a team of researchers, engineers, it is freely available under an open source license at this &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The EnergyPlus program models heating, cooling, lighting, ventilation, other energy flows, by using a collection of many program modules that work together to calculate the energy required for heating and cooling a building using a variety of systems and energy sources. It does this by simulating the building and associated energy systems when they are exposed to different environmental and operating conditions. The core of the simulation is a model of the building that is based on fundamental heat balance principles.
-&lt;img src=&#34;img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the following, we focus on how we can extract energy Plus model from design builder and run it using python in customized approach with Energy plus core engine. The Notebook used is available on this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/EnergyPlus-Python&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -185,7 +185,7 @@ df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
 &lt;li&gt;Open the file with text editor in order to check the Energy Plus version, note that the energy plus version is that is embedded in design builder&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Download Energy Plus and IDF conversion&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -196,13 +196,13 @@ The next step is to convert you IDF file from the 8.6 version to the 8.9 version
 
 &lt;p&gt;1-Navigate to &lt;strong&gt;IDFVersionUpdated&lt;/strong&gt; which is located at C:\EnergyPlusV8-9-0\PreProcess\IDFVersionUpdater (if we assume that the energy plus was installed at the C:\ folder)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2- Click on Choose File to update  and browse to the IDF file and choose the new version as 8.9.0
-&lt;img src=&#34;img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3-Once the conversion process is finished, a new IDF file is created
-&lt;img src=&#34;img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Installing and using EPPY (Python Package)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -227,7 +227,7 @@ The next step is to convert you IDF file from the 8.6 version to the 8.9 version
 &lt;p&gt;3-  The &lt;strong&gt;EPW file&lt;/strong&gt; is the weather file used for the simulation&lt;/p&gt;
 
 &lt;p&gt;We propose to put each file in a folder&lt;br /&gt;
-&lt;img src=&#34;img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;First of all, let’s create an IDF class using the package:&lt;/p&gt;
 
@@ -241,7 +241,7 @@ idf1 = IDF(fname1,Weather)
 idf1.printidf()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The IDF class is constructed with different objects, we can iterate over the IDF class in order to Know name of the different objects.&lt;/p&gt;
 
@@ -249,7 +249,7 @@ idf1.printidf()
 	print (x)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Among these objects, the most important that can be modified during energy simulation studies are:&lt;/p&gt;
 
@@ -281,7 +281,7 @@ people.Number_of_People=5
 print (idf1.idfobjects[&#39;PEOPLE&#39;])
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;LIGHTS=idf1.idfobjects[&#39;LIGHTS&#39;]
 for LIGHT in LIGHTS:
@@ -291,7 +291,7 @@ print (idf1.idfobjects[&#39;LIGHTS&#39;])
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for material in idf1.idfobjects[&amp;quot;MATERIAL&amp;quot;]:
     if material.Name.find(&#39;Concrete&#39;)&amp;gt;0:
@@ -309,11 +309,11 @@ subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weath
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;All the &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files are located in the folder&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -331,7 +331,7 @@ subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weath
 &lt;p&gt;We can notice that in EnergyPlus website there is &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/weather&#34; target=&#34;_blank&#34;&gt;cartography&lt;/a&gt;&lt;/strong&gt; presenting the locations where the EnergyPlus weather files are available. The list of these locations can be downloaded as &lt;strong&gt;json format&lt;/strong&gt; from this link &lt;strong&gt;&lt;a href=&#34;https://raw.githubusercontent.com/NREL/EnergyPlus/develop/weather/master.geojson&#34; target=&#34;_blank&#34;&gt;NREL Github&lt;/a&gt;&lt;/strong&gt;.
 If we open this file with Notepad, we notice that each point/location is presented by these lines which is repeated every 15 lines.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Moreover, in the file name, we notice that it is divided in 2 parts which are the country code with three letters and the city name, for example &lt;strong&gt;&amp;ldquo;FRA_Paris.Orly.071490_IWEC&amp;rdquo;&lt;/strong&gt; the &lt;strong&gt;FRA&lt;/strong&gt; is the country code for &lt;strong&gt;France&lt;/strong&gt; and &lt;strong&gt;Paris.Orly&lt;/strong&gt; is the name of the city (location).
 First of all, we can easily read this file line by line with python&lt;/p&gt;
@@ -350,7 +350,7 @@ with open(filename) as f:
 &amp;gt;&amp;gt; IND_Kota
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;With the same methodology we can extract the EWP URL file and the (X,Y) coordinates.&lt;/p&gt;
 
@@ -402,11 +402,11 @@ data.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 
 &lt;p&gt;the exported data set is presented as bellow.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In order to add the full country name and the continent name, as first step we can download as csv file from this &lt;strong&gt;&lt;a href=&#34;https://datahub.io/JohnSnowLabs/country-and-continent-codes-list&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt; a &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/country-and-continent-codes-list-csv_csv.csv&#34; target=&#34;_blank&#34;&gt;database&lt;/a&gt;&lt;/strong&gt; that consists of list of countries by continent, and then, we merge this dataset with the data set extracted form the EnergyPlus data based on the country_id.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;country_data=pd.read_csv(&#39;country-and-continent-codes-list-csv_csv.csv&#39;,sep=&#39;,&#39;)[[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Three_Letter_Country_Code&#39;]]
 
@@ -416,12 +416,63 @@ result = pd.merge(data_E_PLUS, country_data, on=[&#39;Country_ID&#39;])
 result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we have this dataset that we can use &lt;strong&gt;&lt;a href=&#34;https://plot.ly/dash/&#34; target=&#34;_blank&#34;&gt;dash&lt;/a&gt;&lt;/strong&gt; which is python framework  that allow to built web app.&lt;/p&gt;
 
 &lt;p&gt;In our case we use the widget map in order to present the different location referring to the X and Y coordinate, in addition, a conditioned selectors to choose the location based on the continent, the country and the chosen city. The full code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/weather_link_download.py&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt; and the output is similar to bellow.
-&lt;img src=&#34;img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Navier stock equation</title>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0200</pubDate>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</guid>
+      <description>&lt;p&gt;It’s the fundamental equations describing fluids dynamics, the &lt;strong&gt;Navies Stocks equations&lt;/strong&gt; are famously challenging to understand, mainly is essentially a form of newton’s second law:  the acceleration of the body times its mass equals to the sum of the forces acting on it,
+and mass conversation. For compressible and Newtonian fluid, these equations are presented as below:&lt;/p&gt;
+
+&lt;p&gt;\begin{align}
+\nabla (V) &amp;amp;= 0 \newline
+\frac{D (\rho V)}{Dt} &amp;amp; = -\nabla P+\mu \nabla V^2 + \rho g \newline
+\frac{\partial \rho V}{\partial t}+ \nabla (\rho V^2) &amp;amp; = -\nabla P+\mu \nabla V^2 + \rho g
+\end{align}&lt;/p&gt;
+
+&lt;p&gt;Physically, it’s easy to understand the meaning of each term:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$\frac{\partial \rho V}{\partial t}+ \nabla (\rho V^2) $&lt;/code&gt; is analogues to mass times acceleration&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$\nabla P $&lt;/code&gt; is the pressure forces&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$\mu \nabla V^2 $&lt;/code&gt; is the viscous forces&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$\rho g $&lt;/code&gt; is external forces ad gravity for instance.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These equations can be used for almost any problem involving fluid: as aerodynamics of formula 1, designing supersonic aircraft or Fixed-wing aircraft, studding the motion of the blood inside the body, pollution modeling, climate modeling and cloud motion, ocean and river flows… all these problems satisfy these equations.&lt;/p&gt;
+
+&lt;p&gt;However, mathematically, we don’t understand these equations, in the sense that, as mathematician, when you want to solve a set of differential equation like &lt;code&gt;$\dot Y=a*Y+b$&lt;/code&gt;, you want that these equations satisfy some particular properties:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The solution must exist.&lt;/li&gt;
+&lt;li&gt;The solution must be unique according to the boundary conditions.&lt;/li&gt;
+&lt;li&gt;The solution must be robust (if you made a little or tiny change in the boundary conditions the result must change smoothly)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many mathematicians and smart peoples since the previous century worked to achieve this step, unfortunately they can’t prove the existence of a robust solution all the time, given the velocity or pressure as boundary conditions. That’s way in 2000 these equations was listed on the &lt;strong&gt;Millennium Prize Problems&lt;/strong&gt;, and the genius who solves this problem will be rewarded by &lt;strong&gt;1 Millions €&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hence, in order to deal to this problem, the &lt;strong&gt;CFD codes&lt;/strong&gt; nowadays, that have been developed since 1960 to solve these equations numerically to simulate a fluid motion, try to do some simplifications or make some assumptions like using the &lt;strong&gt;Reynolds-averaged method&lt;/strong&gt; and feeding up these equations by &lt;strong&gt;complementary models&lt;/strong&gt; ( large Eddy simulation,Standard K-ε, Detached Eddy Simulation&amp;hellip;) , in order to presents the &lt;strong&gt;turbulence phenomena&lt;/strong&gt; that can occur, based on the studied problem, the circumstance of the flow, and the boundary condition.
+In fact, &lt;strong&gt;turbulence&lt;/strong&gt; remains one of the greatest unsolved problems in physics, and one the key to understand this unsolvable math problem is to understand the turbulence, which is the chaotic, eddy and the random motion of the fluid particle, this fluid motion is so difficult to understand and model. Furthermore, it depends strongly with the fluid velocity and the fluid viscosity.&lt;/p&gt;
+
+&lt;p&gt;That’s way, scientists introduce the Reynold number which can be interpreted as the ratio between the inertia forces (created by the fluid velocity) and the by fluid friction forces (related to the fluid viscosity) when the &lt;strong&gt;Re number&lt;/strong&gt; in less that 4000 the fluid motion is characterized with the &lt;strong&gt;laminar motion&lt;/strong&gt;, the fluid moves smoothly and it’s easy  and reasonably the predict and understand the fluid motion, however, when the &lt;strong&gt;Re number&lt;/strong&gt; is higher &lt;strong&gt;the turbulence motion&lt;/strong&gt; appears and the physic phenomena is difficult to understand.&lt;/p&gt;
+
+&lt;p&gt;An intuitive experience that highlights the turbulence motion due to the boundary layer separation is presented in this &lt;strong&gt;&lt;a href=&#34;https://youtu.be/v4zPW40vhHI?t=149&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt;&lt;/strong&gt; (2.22 to 4.22)
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/2/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most scientist think that solving these mysterious equations will rely on predicting the statistical evolution of turbulent flows, and increase computing power.
+Extremely high-speed computer simulations of turbulent flow could help to identify patterns that could lead to theory that organize and unifies predictions across different situations. By reaching this breakthrough, the understanding of turbulence could have huge positive impacts, as better prepare and predict weather disasters, the flow of blood through the cardiovascular system, the airflow over an aircraft wing&amp;hellip;..&lt;/p&gt;
 </description>
     </item>
     
@@ -436,7 +487,7 @@ Indeed, such a tool can model the energy needs of the building and evaluate its 
 
 &lt;p&gt;For an existing building, it allows to build improvement scenarios and to study actions to improve energy performance, and to put in place a guarantee of the actual performance&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/0/Image1.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/0/Image1.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the following, I present a summary of the strengths of some softwares, commonly used by engineers in France, and that I have already used it and tested it during my university studies and my professional experience.&lt;/p&gt;
 

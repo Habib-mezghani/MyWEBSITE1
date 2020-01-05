@@ -26,7 +26,7 @@
 &lt;p&gt;We can notice that in EnergyPlus website there is &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/weather&#34; target=&#34;_blank&#34;&gt;cartography&lt;/a&gt;&lt;/strong&gt; presenting the locations where the EnergyPlus weather files are available. The list of these locations can be downloaded as &lt;strong&gt;json format&lt;/strong&gt; from this link &lt;strong&gt;&lt;a href=&#34;https://raw.githubusercontent.com/NREL/EnergyPlus/develop/weather/master.geojson&#34; target=&#34;_blank&#34;&gt;NREL Github&lt;/a&gt;&lt;/strong&gt;.
 If we open this file with Notepad, we notice that each point/location is presented by these lines which is repeated every 15 lines.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/11.png&#34; alt=&#34;image 11&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Moreover, in the file name, we notice that it is divided in 2 parts which are the country code with three letters and the city name, for example &lt;strong&gt;&amp;ldquo;FRA_Paris.Orly.071490_IWEC&amp;rdquo;&lt;/strong&gt; the &lt;strong&gt;FRA&lt;/strong&gt; is the country code for &lt;strong&gt;France&lt;/strong&gt; and &lt;strong&gt;Paris.Orly&lt;/strong&gt; is the name of the city (location).
 First of all, we can easily read this file line by line with python&lt;/p&gt;
@@ -45,7 +45,7 @@ with open(filename) as f:
 &amp;gt;&amp;gt; IND_Kota
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/22.png&#34; alt=&#34;image 22&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;With the same methodology we can extract the EWP URL file and the (X,Y) coordinates.&lt;/p&gt;
 
@@ -97,11 +97,11 @@ data.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 
 &lt;p&gt;the exported data set is presented as bellow.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/33.png&#34; alt=&#34;image 33&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In order to add the full country name and the continent name, as first step we can download as csv file from this &lt;strong&gt;&lt;a href=&#34;https://datahub.io/JohnSnowLabs/country-and-continent-codes-list&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt; a &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/country-and-continent-codes-list-csv_csv.csv&#34; target=&#34;_blank&#34;&gt;database&lt;/a&gt;&lt;/strong&gt; that consists of list of countries by continent, and then, we merge this dataset with the data set extracted form the EnergyPlus data based on the country_id.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/44.png&#34; alt=&#34;image 44&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;country_data=pd.read_csv(&#39;country-and-continent-codes-list-csv_csv.csv&#39;,sep=&#39;,&#39;)[[&#39;Continent_Name&#39;,&#39;Country_Name&#39;,&#39;Three_Letter_Country_Code&#39;]]
 
@@ -111,12 +111,12 @@ result = pd.merge(data_E_PLUS, country_data, on=[&#39;Country_ID&#39;])
 result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/5.png&#34; alt=&#34;image 5&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we have this dataset that we can use &lt;strong&gt;&lt;a href=&#34;https://plot.ly/dash/&#34; target=&#34;_blank&#34;&gt;dash&lt;/a&gt;&lt;/strong&gt; which is python framework  that allow to built web app.&lt;/p&gt;
 
 &lt;p&gt;In our case we use the widget map in order to present the different location referring to the X and Y coordinate, in addition, a conditioned selectors to choose the location based on the continent, the country and the chosen city. The full code can be downloaded from this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/Weather-file-download/blob/master/weather_link_download.py&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt; and the output is similar to bellow.
-&lt;img src=&#34;img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

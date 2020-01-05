@@ -479,7 +479,7 @@
 <p>We can notice that in EnergyPlus website there is <strong><a href="https://energyplus.net/weather" target="_blank">cartography</a></strong> presenting the locations where the EnergyPlus weather files are available. The list of these locations can be downloaded as <strong>json format</strong> from this link <strong><a href="https://raw.githubusercontent.com/NREL/EnergyPlus/develop/weather/master.geojson" target="_blank">NREL Github</a></strong>.
 If we open this file with Notepad, we notice that each point/location is presented by these lines which is repeated every 15 lines.</p>
 
-<p><img src="img/3/11.png" alt="image 11" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/11.png" alt="image 11" /></p>
 
 <p>Moreover, in the file name, we notice that it is divided in 2 parts which are the country code with three letters and the city name, for example <strong>&ldquo;FRA_Paris.Orly.071490_IWEC&rdquo;</strong> the <strong>FRA</strong> is the country code for <strong>France</strong> and <strong>Paris.Orly</strong> is the name of the city (location).
 First of all, we can easily read this file line by line with python</p>
@@ -498,7 +498,7 @@ with open(filename) as f:
 &gt;&gt; IND_Kota
 </code></pre>
 
-<p><img src="img/3/22.png" alt="image 22" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/22.png" alt="image 22" /></p>
 
 <p>With the same methodology we can extract the EWP URL file and the (X,Y) coordinates.</p>
 
@@ -550,11 +550,11 @@ data.to_csv('EWP_data_base.csv', sep=';')
 
 <p>the exported data set is presented as bellow.</p>
 
-<p><img src="img/3/33.png" alt="image 33" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/33.png" alt="image 33" /></p>
 
 <p>In order to add the full country name and the continent name, as first step we can download as csv file from this <strong><a href="https://datahub.io/JohnSnowLabs/country-and-continent-codes-list" target="_blank">link</a></strong> a <strong><a href="https://github.com/Habib-mezghani/Weather-file-download/blob/master/country-and-continent-codes-list-csv_csv.csv" target="_blank">database</a></strong> that consists of list of countries by continent, and then, we merge this dataset with the data set extracted form the EnergyPlus data based on the country_id.</p>
 
-<p><img src="img/3/44.png" alt="image 44" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/44.png" alt="image 44" /></p>
 
 <pre><code class="language-python">country_data=pd.read_csv('country-and-continent-codes-list-csv_csv.csv',sep=',')[['Continent_Name','Country_Name','Three_Letter_Country_Code']]
 
@@ -564,12 +564,12 @@ result = pd.merge(data_E_PLUS, country_data, on=['Country_ID'])
 result.to_csv('EWP_data_base.csv', sep=';')
 </code></pre>
 
-<p><img src="img/3/5.png" alt="image 5" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/5.png" alt="image 5" /></p>
 
 <p>Once we have this dataset that we can use <strong><a href="https://plot.ly/dash/" target="_blank">dash</a></strong> which is python framework  that allow to built web app.</p>
 
 <p>In our case we use the widget map in order to present the different location referring to the X and Y coordinate, in addition, a conditioned selectors to choose the location based on the continent, the country and the chosen city. The full code can be downloaded from this <strong><a href="https://github.com/Habib-mezghani/Weather-file-download/blob/master/weather_link_download.py" target="_blank">link on Github</a></strong> and the output is similar to bellow.
-<img src="img/3/6.png" alt="image 6" /></p>
+<img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png" alt="image 6" /></p>
 
     </div>
 

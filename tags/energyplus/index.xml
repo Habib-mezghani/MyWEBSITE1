@@ -20,7 +20,7 @@
       <description>&lt;p&gt;EnergyPlus is the US Department of Energy’s flagship program for building energy modeling. Developed by a team of researchers, engineers, it is freely available under an open source license at this &lt;strong&gt;&lt;a href=&#34;https://energyplus.net/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The EnergyPlus program models heating, cooling, lighting, ventilation, other energy flows, by using a collection of many program modules that work together to calculate the energy required for heating and cooling a building using a variety of systems and energy sources. It does this by simulating the building and associated energy systems when they are exposed to different environmental and operating conditions. The core of the simulation is a model of the building that is based on fundamental heat balance principles.
-&lt;img src=&#34;img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the following, we focus on how we can extract energy Plus model from design builder and run it using python in customized approach with Energy plus core engine. The Notebook used is available on this &lt;strong&gt;&lt;a href=&#34;https://github.com/Habib-mezghani/EnergyPlus-Python&#34; target=&#34;_blank&#34;&gt;link on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 &lt;li&gt;Open the file with text editor in order to check the Energy Plus version, note that the energy plus version is that is embedded in design builder&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Download Energy Plus and IDF conversion&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -43,13 +43,13 @@ The next step is to convert you IDF file from the 8.6 version to the 8.9 version
 
 &lt;p&gt;1-Navigate to &lt;strong&gt;IDFVersionUpdated&lt;/strong&gt; which is located at C:\EnergyPlusV8-9-0\PreProcess\IDFVersionUpdater (if we assume that the energy plus was installed at the C:\ folder)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2- Click on Choose File to update  and browse to the IDF file and choose the new version as 8.9.0
-&lt;img src=&#34;img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3-Once the conversion process is finished, a new IDF file is created
-&lt;img src=&#34;img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/51.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Installing and using EPPY (Python Package)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -74,7 +74,7 @@ The next step is to convert you IDF file from the 8.6 version to the 8.9 version
 &lt;p&gt;3-  The &lt;strong&gt;EPW file&lt;/strong&gt; is the weather file used for the simulation&lt;/p&gt;
 
 &lt;p&gt;We propose to put each file in a folder&lt;br /&gt;
-&lt;img src=&#34;img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/72.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;First of all, let’s create an IDF class using the package:&lt;/p&gt;
 
@@ -88,7 +88,7 @@ idf1 = IDF(fname1,Weather)
 idf1.printidf()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The IDF class is constructed with different objects, we can iterate over the IDF class in order to Know name of the different objects.&lt;/p&gt;
 
@@ -96,7 +96,7 @@ idf1.printidf()
 	print (x)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Among these objects, the most important that can be modified during energy simulation studies are:&lt;/p&gt;
 
@@ -128,7 +128,7 @@ people.Number_of_People=5
 print (idf1.idfobjects[&#39;PEOPLE&#39;])
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;LIGHTS=idf1.idfobjects[&#39;LIGHTS&#39;]
 for LIGHT in LIGHTS:
@@ -138,7 +138,7 @@ print (idf1.idfobjects[&#39;LIGHTS&#39;])
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for material in idf1.idfobjects[&amp;quot;MATERIAL&amp;quot;]:
     if material.Name.find(&#39;Concrete&#39;)&amp;gt;0:
@@ -156,11 +156,11 @@ subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weath
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;All the &lt;strong&gt;EnergyPlus&lt;/strong&gt; output files are located in the folder&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

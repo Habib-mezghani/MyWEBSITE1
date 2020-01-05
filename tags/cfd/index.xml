@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CFD | MyHomePage</title>
-    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/cfd/</link>
-      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/cfd/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/index.xml" rel="self" type="application/rss+xml" />
     <description>CFD</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <url>https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg</url>
       <title>CFD</title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/cfd/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/</link>
     </image>
     
     <item>
       <title>Navier stock equation</title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/project/navier-stocks-equation/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</link>
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0200</pubDate>
-      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/navier-stocks-equation/</guid>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</guid>
       <description>&lt;p&gt;It’s the fundamental equations describing fluids dynamics, the &lt;strong&gt;Navies Stocks equations&lt;/strong&gt; are famously challenging to understand, mainly is essentially a form of newton’s second law:  the acceleration of the body times its mass equals to the sum of the forces acting on it,
 and mass conversation. For compressible and Newtonian fluid, these equations are presented as below:&lt;/p&gt;
 
@@ -56,7 +56,7 @@ In fact, &lt;strong&gt;turbulence&lt;/strong&gt; remains one of the greatest uns
 &lt;p&gt;That’s way, scientists introduce the Reynold number which can be interpreted as the ratio between the inertia forces (created by the fluid velocity) and the by fluid friction forces (related to the fluid viscosity) when the &lt;strong&gt;Re number&lt;/strong&gt; in less that 4000 the fluid motion is characterized with the &lt;strong&gt;laminar motion&lt;/strong&gt;, the fluid moves smoothly and it’s easy  and reasonably the predict and understand the fluid motion, however, when the &lt;strong&gt;Re number&lt;/strong&gt; is higher &lt;strong&gt;the turbulence motion&lt;/strong&gt; appears and the physic phenomena is difficult to understand.&lt;/p&gt;
 
 &lt;p&gt;An intuitive experience that highlights the turbulence motion due to the boundary layer separation is presented in this &lt;strong&gt;&lt;a href=&#34;https://youtu.be/v4zPW40vhHI?t=149&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt;&lt;/strong&gt; (2.22 to 4.22)
-&lt;img src=&#34;img/2/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/2/1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Most scientist think that solving these mysterious equations will rely on predicting the statistical evolution of turbulent flows, and increase computing power.
 Extremely high-speed computer simulations of turbulent flow could help to identify patterns that could lead to theory that organize and unifies predictions across different situations. By reaching this breakthrough, the understanding of turbulence could have huge positive impacts, as better prepare and predict weather disasters, the flow of blood through the cardiovascular system, the airflow over an aircraft wing&amp;hellip;..&lt;/p&gt;
