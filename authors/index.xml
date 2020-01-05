@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | MyHomePage</title>
-    <link>https://habib-mezghani.github.io/MyWEBSITE/authors/</link>
-      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://habib-mezghani.github.io/MyWEBSITE1/authors/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE1/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <url>https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg</url>
       <title>Authors</title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/authors/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/authors/</link>
     </image>
     
     <item>
       <title></title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/authors/admin/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://habib-mezghani.github.io/MyWEBSITE/authors/admin/</guid>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE1/authors/admin/</guid>
       <description>&lt;p&gt;My name is Habib MEZGHANI, I am an energy efficiency engineer, with advanced Python programming skills. I enjoy modelling thermal and hydronic problems and solving thermal dynamincs simulation and CFD (computional fluid dynamics) equations.&lt;/p&gt;
 
 &lt;p&gt;I worked in many  valuable projects involving data science in Energy Commitment and Estimation field. Add to that, I have a great experience about  the HVAC systems in Data centers.&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EPW | MyHomePage</title>
-    <link>https://habib-mezghani.github.io/MyWEBSITE/tags/epw/</link>
-      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE/tags/epw/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/</link>
+      <atom:link href="https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/index.xml" rel="self" type="application/rss+xml" />
     <description>EPW</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Jul 2019 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>https://habib-mezghani.github.io/MyWEBSITE/img/static/portrait.jpg</url>
+      <url>https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg</url>
       <title>EPW</title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/tags/epw/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/</link>
     </image>
     
     <item>
       <title>How to consult EPW file with Python</title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/project/how-to-consult-epw-file-with-python/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/</link>
       <pubDate>Fri, 05 Jul 2019 00:00:00 +0200</pubDate>
-      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/how-to-consult-epw-file-with-python/</guid>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/</guid>
       <description>&lt;p&gt;Weather file is considered as the basic input for energy modelling engineer, it presents a dataset of one year for the different Physical size. &lt;strong&gt;Energy model calibration&lt;/strong&gt; often uses actual measured weather data, hence, in order to have energy model that mimics the actual energy and thermal behavior of the studied building, the weather file used in the simulation have to be modified according to the recorded and the real data.&lt;/p&gt;
 
 &lt;p&gt;An &lt;strong&gt;EPW file (EnergyPlus weather file)&lt;/strong&gt; can be divided into two parts: header and weather data. The first eight lines of a standard &lt;strong&gt;EPW file&lt;/strong&gt; present the header which contains data of location, design conditions, typical/extreme periods, ground temperatures, holidays/daylight savings, data periods and other comments. The second part presents the hourly data, the main columns of the data set are detailed &lt;strong&gt;&lt;a href=&#34;https://bigladdersoftware.com/epx/docs/8-3/auxiliary-programs/energyplus-weather-file-epw-data-dictionary.html#data-field-descriptions&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -167,9 +167,9 @@ df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
     
     <item>
       <title>Download Weather file with Python </title>
-      <link>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</link>
+      <link>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
-      <guid>https://habib-mezghani.github.io/MyWEBSITE/project/download-weather-file-with-python/</guid>
+      <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</guid>
       <description>&lt;p&gt;Weather file is considered as the basic input for energy modelling engineer, it represents 1 year of hourly (8760) weather data values, this data set are commonly used by energy engineers for modelling renewable energy systems and assess the building heating and cooling needs, as it provides a typical description of the main physical properties as the temperature, the humidity, solar radiation, wind speed… for the concerned region.&lt;/p&gt;
 
 &lt;p&gt;The Energy Plus weather file is commonly used by engineer as it is provided by Energy plus, easy to download and suitable for almost energy simulation softwares.&lt;/p&gt;
