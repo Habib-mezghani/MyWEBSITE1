@@ -11,7 +11,7 @@
       <title>EnergyPlus</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/energyplus/</link>
     </image>
-    
+
     <item>
       <title>EnergyPlus with Python</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/energy-plus-with-python/</link>
@@ -93,7 +93,7 @@ idf1.printidf()
 &lt;p&gt;The IDF class is constructed with different objects, we can iterate over the IDF class in order to Know name of the different objects.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in idf1.idfobjects:
-	print (x)
+    print (x)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
@@ -134,7 +134,7 @@ print (idf1.idfobjects[&#39;PEOPLE&#39;])
 for LIGHT in LIGHTS:
 LIGHT.Design_Level_Calculation_Method=&#39;Watts/Area&#39;
 LIGHT.Watts_per_Zone_Floor_Area=6
-print (idf1.idfobjects[&#39;LIGHTS&#39;]) 
+print (idf1.idfobjects[&#39;LIGHTS&#39;])
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -163,9 +163,9 @@ subprocess.call(&amp;quot;C:\EnergyPlusV8-9-0\energyplus.exe -w &amp;quot;+Weath
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/5/14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
-    
+
     <item>
-      <title>Download Weather file with Python </title>
+      <title>Downloading EnergyPlus Weather Files with Python </title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</guid>
@@ -271,6 +271,6 @@ result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 &lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
-    
+
   </channel>
 </rss>

@@ -11,7 +11,7 @@
       <title>Tags</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/</link>
     </image>
-    
+
     <item>
       <title>EPW</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/</link>
@@ -19,7 +19,7 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Python</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/python/</link>
@@ -27,7 +27,7 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/python/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>EnergyPlus</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/energyplus/</link>
@@ -35,7 +35,7 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/energyplus/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>CFD</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/</link>
@@ -43,15 +43,15 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/</guid>
       <description></description>
     </item>
-    
+
     <item>
-      <title>Navier-Stocks</title>
+      <title>Navier-Stokes</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/navier-stocks/</link>
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0200</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/navier-stocks/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Energy Modelling</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/energy-modelling/</link>
@@ -59,7 +59,7 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/energy-modelling/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Energy software</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/energy-software/</link>
@@ -67,6 +67,6 @@
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/tags/energy-software/</guid>
       <description></description>
     </item>
-    
+
   </channel>
 </rss>

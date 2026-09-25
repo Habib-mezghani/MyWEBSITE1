@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Navier-Stocks | MyHomePage</title>
+    <title>Navier-Stokes | MyHomePage</title>
     <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/navier-stocks/</link>
       <atom:link href="https://habib-mezghani.github.io/MyWEBSITE1/tags/navier-stocks/index.xml" rel="self" type="application/rss+xml" />
-    <description>Navier-Stocks</description>
+    <description>Navier-Stokes</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0200</lastBuildDate>
     <image>
       <url>https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg</url>
-      <title>Navier-Stocks</title>
+      <title>Navier-Stokes</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/navier-stocks/</link>
     </image>
-    
+
     <item>
-      <title>Navier stock equation</title>
+      <title>The Navier-Stokes Equations</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</link>
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0200</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</guid>
@@ -62,6 +62,6 @@ In fact, &lt;strong&gt;turbulence&lt;/strong&gt; remains one of the greatest uns
 Extremely high-speed computer simulations of turbulent flow could help to identify patterns that could lead to theory that organize and unifies predictions across different situations. By reaching this breakthrough, the understanding of turbulence could have huge positive impacts, as better prepare and predict weather disasters, the flow of blood through the cardiovascular system, the airflow over an aircraft wing&amp;hellip;..&lt;/p&gt;
 </description>
     </item>
-    
+
   </channel>
 </rss>

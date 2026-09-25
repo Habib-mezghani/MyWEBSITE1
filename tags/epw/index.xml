@@ -11,9 +11,9 @@
       <title>EPW</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/epw/</link>
     </image>
-    
+
     <item>
-      <title>How to consult EPW file with Python</title>
+      <title>How to Read and Edit EPW Weather Files with Python</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/</link>
       <pubDate>Fri, 05 Jul 2019 00:00:00 +0200</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/</guid>
@@ -57,7 +57,7 @@ for wd in epw.weatherdata:
     wd.relative_humidity =Humidity_data[i]
     wd.wind_speed =wind_data[i]
     i=i+1
-    
+
 epw.save(r&amp;quot;new_file.epw&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -90,7 +90,7 @@ epw.save(r&amp;quot;new_file.epw&amp;quot;)
     total_sky_cover = []
     opaque_sky_cover = []
     precipitable_water = []
-   
+
     for wd in epw.weatherdata:
         year.append(wd.year)
         month.append(wd.month)
@@ -108,21 +108,19 @@ epw.save(r&amp;quot;new_file.epw&amp;quot;)
         total_sky_cover.append(wd.total_sky_cover)
         opaque_sky_cover.append(wd.opaque_sky_cover)
         precipitable_water.append(wd.precipitable_water)
-        
-    
+
     data_weather = pd.DataFrame(
         [year, month, day, hour, dry_bulb_temperature, dew_point_temperature, relative_humidity,
          atmospheric_station_pressure, global_horizontal_radiation, direct_normal_radiation, diffuse_horizontal_radiation,
          wind_direction,
          wind_speed, total_sky_cover, opaque_sky_cover, precipitable_water])
-    
+
     data_weather = data_weather.transpose()
     data_weather.columns = [&#39;year&#39;, &#39;month&#39;, &#39;day&#39;, &#39;hour&#39;, &#39;dry_bulb_temperature&#39;, &#39;dew_point_temperature&#39;,
                             &#39;relative_humidity&#39;,
                             &#39;atmospheric_station_pressure&#39;, &#39;global_horizontal_radiation&#39;, &#39;direct_normal_radiation&#39;,
                             &#39;diffuse_horizontal_radiation&#39;,
                             &#39;wind_direction&#39;, &#39;wind_speed&#39;, &#39;total_sky_cover&#39;, &#39;opaque_sky_cover&#39;, &#39;precipitable_water&#39;]
-    
 
     return data_weather
 
@@ -145,7 +143,7 @@ df.head()
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Presenting the monthly data of the solar radiation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_month=df.groupby([&#39;month&#39;]).sum()[[&#39;global_horizontal_radiation&#39;,&#39;direct_normal_radiation&#39;,&#39;diffuse_horizontal_radiation&#39;]]/1000
-df_month.plot(kind=&#39;bar&#39;,figsize=(15,5)) 
+df_month.plot(kind=&#39;bar&#39;,figsize=(15,5))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
@@ -164,9 +162,9 @@ df3.plot(figsize=(15,5),ax=ax,style=&#39;.-&#39;)
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
-    
+
     <item>
-      <title>Download Weather file with Python </title>
+      <title>Downloading EnergyPlus Weather Files with Python </title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</guid>
@@ -272,6 +270,6 @@ result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 &lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
-    
+
   </channel>
 </rss>

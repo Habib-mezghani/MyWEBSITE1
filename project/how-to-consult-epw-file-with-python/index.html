@@ -8,96 +8,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 4.5.0">
 
-  
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
   <meta name="author" content="Habib MEZGHANI">
 
-  
-  
-  
-    
-  
-  <meta name="description" content="This article presents an example of using Python to read and modify weather file ...">
+  <meta name="description" content="Read, modify and plot EnergyPlus weather (EPW) files with Python ...">
 
-  
   <link rel="alternate" hreflang="en-us" href="https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/">
 
-  
-
-
-  
-  
-  
   <meta name="theme-color" content="#3f51b5">
-  
 
-  
-  
-  
-  
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-    
-    
-    
-      
-    
-    
-      
-      
-        
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
-      
-    
 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
-    
 
-    
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.9.0/instantsearch.min.css" integrity="sha256-ZtmLe16p4jS4/2wPwwH6NzJt460SJzgLmhKrYo5yn7g=" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.10.2/instantsearch-theme-algolia.min.css" integrity="sha256-uL8LUd3zkI/lXvc/Hv/oOu8ld6RJcOZiUY/8c+I+3/o=" crossorigin="anonymous">
-    
 
-  
-
-  
-  
-  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
-  
 
-  
-  
-  
-  
   <link rel="stylesheet" href="/MyWEBSITE1/css/academic.css">
-
-  
-
-
-
-
-  
-
-
-  
 
   <link rel="manifest" href="/MyWEBSITE1/index.webmanifest">
   <link rel="icon" type="image/png" href="/MyWEBSITE1/img/icon-32.png">
@@ -105,42 +38,17 @@
 
   <link rel="canonical" href="https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/">
 
-  
-  
-  
-  
-    
-    
-  
-  
   <meta property="twitter:card" content="summary">
-  
+
   <meta property="og:site_name" content="MyHomePage">
   <meta property="og:url" content="https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/">
-  <meta property="og:title" content="How to consult EPW file with Python | MyHomePage">
-  <meta property="og:description" content="This article presents an example of using Python to read and modify weather file ..."><meta property="og:image" content="https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg">
+  <meta property="og:title" content="How to Read and Edit EPW Weather Files with Python | MyHomePage">
+  <meta property="og:description" content="Read, modify and plot EnergyPlus weather (EPW) files with Python ..."><meta property="og:image" content="https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg">
   <meta property="twitter:image" content="https://habib-mezghani.github.io/MyWEBSITE1/img/static/portrait.jpg"><meta property="og:locale" content="en-us">
-  
-    
+
       <meta property="article:published_time" content="2019-07-05T00:00:00&#43;02:00">
-    
+
     <meta property="article:modified_time" content="2019-07-05T00:00:00&#43;02:00">
-  
-
-  
-
-
-    
-
-
-
-
-
-
-
-
-
-
 
 <script type="application/ld+json">
 {
@@ -150,16 +58,16 @@
     "@type": "WebPage",
     "@id": "https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/"
   },
-  "headline": "How to consult EPW file with Python",
-  
+  "headline": "How to Read and Edit EPW Weather Files with Python",
+
   "datePublished": "2019-07-05T00:00:00+02:00",
   "dateModified": "2019-07-05T00:00:00+02:00",
-  
+
   "author": {
     "@type": "Person",
     "name": "Habib MEZGHANI"
   },
-  
+
   "publisher": {
     "@type": "Organization",
     "name": "MyHomePage",
@@ -168,25 +76,11 @@
       "url": "https://habib-mezghani.github.io/MyWEBSITE1/img/icon-512.png"
     }
   },
-  "description": "This article presents an example of using Python to read and modify weather file ..."
+  "description": "Read, modify and plot EnergyPlus weather (EPW) files with Python ..."
 }
 </script>
 
-  
-
-  
-
-
-  
-
-
-  
-
-
-
-
-
-  <title>How to consult EPW file with Python | MyHomePage</title>
+  <title>How to Read and Edit EPW Weather Files with Python | MyHomePage</title>
 
 </head>
 
@@ -206,151 +100,56 @@
       </div>
 
       <div id="search-box">
-        
-        
-        
+
       </div>
 
     </section>
     <section class="section-search-results">
 
       <div id="search-hits">
-        
+
       </div>
 
     </section>
   </div>
 </aside>
 
-
-  
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
-    
       <a class="navbar-brand" href="/MyWEBSITE1/">MyHomePage</a>
-      
+
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
       </button>
-      
 
-    
     <div class="collapse navbar-collapse" id="navbar">
 
-      
-      
       <ul class="navbar-nav mr-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
 
         <li class="nav-item">
           <a class="nav-link " href="/MyWEBSITE1/#about"><span>Home</span></a>
         </li>
 
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
         <li class="nav-item">
           <a class="nav-link " href="/MyWEBSITE1/#Projects"><span>Posts & Projects</span></a>
         </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
 
         <li class="nav-item">
           <a class="nav-link " href="/MyWEBSITE1/#contact"><span>Contact</span></a>
         </li>
 
-        
-        
-
-      
       </ul>
       <ul class="navbar-nav ml-auto">
-      
 
-        
-
-        
         <li class="nav-item">
           <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
-        
 
-        
-
-        
         <li class="nav-item">
           <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
         </li>
-        
 
       </ul>
 
@@ -358,11 +157,7 @@
   </div>
 </nav>
 
-
   <article class="article article-project">
-
-  
-
 
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -378,9 +173,7 @@
   }
   });
   MathJax.Hub.Queue(function() {
-    
-    
-    
+
     var all = MathJax.Hub.getAllJax(), i;
     for(i = 0; i < all.length; i += 1) {
         all[i].SourceElement().parentNode.className += ' has-jax';
@@ -388,102 +181,48 @@
   });
 
   MathJax.Hub.Config({
-  
+
   TeX: { equationNumbers: { autoNumber: "AMS" } }
   });
 </script>
 
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
 <div class="article-container pt-3">
-  <h1>How to consult EPW file with Python</h1>
-
-  
-
-  
-    
-
+  <h1>How to Read and Edit EPW Weather Files with Python</h1>
 
 <div class="article-metadata">
 
-  
-  
-
-  
   <span class="article-date">
-    
-    
-      
-    
+
     Jul 5, 2019
   </span>
-  
 
-  
-
-  
-
-  
-  
-  
   <span class="middot-divider"></span>
   <a href="/MyWEBSITE1/project/how-to-consult-epw-file-with-python/#disqus_thread"></a>
-  
-
-  
-  
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 </div>
-
-
 
   <div class="article-container">
 
     <div class="article-style">
-      <p>Weather file is considered as the basic input for energy modelling engineer, it presents a dataset of one year for the different Physical size. <strong>Energy model calibration</strong> often uses actual measured weather data, hence, in order to have energy model that mimics the actual energy and thermal behavior of the studied building, the weather file used in the simulation have to be modified according to the recorded and the real data.</p>
+      <p>The weather file is the most basic input for an energy modelling engineer: it holds one year of hourly data for each weather variable. <strong>Energy model calibration</strong> often relies on measured weather data. For a model to reproduce the real energy and thermal behaviour of a building, the weather file used in the simulation has to be updated with the data actually recorded on site.</p>
 
-<p>An <strong>EPW file (EnergyPlus weather file)</strong> can be divided into two parts: header and weather data. The first eight lines of a standard <strong>EPW file</strong> present the header which contains data of location, design conditions, typical/extreme periods, ground temperatures, holidays/daylight savings, data periods and other comments. The second part presents the hourly data, the main columns of the data set are detailed <strong><a href="https://bigladdersoftware.com/epx/docs/8-3/auxiliary-programs/energyplus-weather-file-epw-data-dictionary.html#data-field-descriptions" target="_blank">here</a></strong>.</p>
+<p>An <strong>EPW (EnergyPlus Weather) file</strong> has two parts: a header and the weather data. The first eight lines form the header, which describes the location, design conditions, typical and extreme periods, ground temperatures, holidays and daylight saving, data periods and comments. The rest of the file holds the hourly data; the columns are described in the <strong><a href="https://bigladdersoftware.com/epx/docs/8-3/auxiliary-programs/energyplus-weather-file-epw-data-dictionary.html#data-field-descriptions" target="_blank">EPW data dictionary</a></strong>.</p>
 
-<p><strong><a href="https://github.com/rbuffat/pyepw" target="_blank">Pyepw</a></strong> is python package that provides the flexibility to read visualize or, replace the core weather data.
-The installation can be done by the simple command on the cmd <strong>pip install pyepw</strong>. the Python notebook used in the following can be downloaded from this <strong><a href="https://github.com/Habib-mezghani/Python-EPW" target="_blank">Github link</a></strong>
-In order to read the weather file first of all, we must create an instance of the class <strong>EPW()</strong> and apply the read function with the name of the weather file (with the directory location) as input.</p>
+<p><strong><a href="https://github.com/rbuffat/pyepw" target="_blank">pyepw</a></strong> is a Python package for reading, visualising and replacing the weather data in an EPW file.
+Install it with <code>pip install pyepw</code>. The notebook used in this article is available <strong><a href="https://github.com/Habib-mezghani/Python-EPW" target="_blank">on GitHub</a></strong>.</p>
+
+<h3>Reading an EPW file</h3>
+
+<p>To read a weather file, create an instance of the <strong>EPW</strong> class and call its <code>read()</code> method with the path to the file:</p>
 
 <pre><code class="language-python">from pyepw.epw import EPW
 epw = EPW()
 epw.read(r&quot;downloadFile.epw&quot;) # weather file of Bordeaux in France
 </code></pre>
 
-<p>The description related to the weather file location, can be accessed by these lines, note that location is another class presented as field of the <strong>EWP()</strong> class.</p>
+<p>The location details are available through <code>epw.location</code>, which is itself an object stored as a field of the <strong>EPW</strong> class:</p>
 
 <pre><code class="language-python">print(epw.location.country)
 print(epw.location.latitude)
@@ -491,13 +230,15 @@ print(epw.location.longitude)
 print(epw.location.elevation)
 </code></pre>
 
-<p>In order to read the hourly data of the dry temperature or the dew temperature, we must iterate over the class weatherdata which are the fields of the created EWP class and access to the field dry_bulb_temperature, dew_point_temperature.</p>
+<p>To read the hourly values, such as dry-bulb and dew-point temperature, loop over <code>epw.weatherdata</code> and read the <code>dry_bulb_temperature</code> and <code>dew_point_temperature</code> fields:</p>
 
 <pre><code class="language-python">for wd in epw.weatherdata:
     print (wd.dry_bulb_temperature, '   ', wd.dew_point_temperature)
 </code></pre>
 
-<p>To change and save the weather file from recorded data, we must change each field of the <strong>epw.weatherdata</strong> class. In the following example, let’s assume that we have the recorded data of the dry temperature the relative humidity and the wind speed, these data are presented as lists of random value (just for demonstration)</p>
+<h3>Replacing data with measured values</h3>
+
+<p>To build a weather file from recorded data, we overwrite the relevant fields of each <strong>epw.weatherdata</strong> record and save the result. In the example below, we assume we have measured dry-bulb temperature, relative humidity and wind speed. For demonstration, these are simply lists of random values:</p>
 
 <pre><code class="language-python">import random
 
@@ -510,11 +251,13 @@ for wd in epw.weatherdata:
     wd.relative_humidity =Humidity_data[i]
     wd.wind_speed =wind_data[i]
     i=i+1
-    
+
 epw.save(r&quot;new_file.epw&quot;)
 </code></pre>
 
-<p>Let’s try to construct a data frame by using the weather file, we can use dummies lists to store the data of each iteration over the <strong>epw.weatherdata</strong> fields and next can we create a <strong><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" target="_blank">Pandas DataFrame</a></strong> from these lists.</p>
+<h3>Converting the data to a DataFrame</h3>
+
+<p>To analyse the weather data more easily, we can build a table from it. We loop over the <strong>epw.weatherdata</strong> records, append each field to its own list, and then create a <strong><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" target="_blank">pandas DataFrame</a></strong> from these lists:</p>
 
 <pre><code class="language-python">def Create_df_weather():
 
@@ -543,7 +286,7 @@ epw.save(r&quot;new_file.epw&quot;)
     total_sky_cover = []
     opaque_sky_cover = []
     precipitable_water = []
-   
+
     for wd in epw.weatherdata:
         year.append(wd.year)
         month.append(wd.month)
@@ -555,27 +298,25 @@ epw.save(r&quot;new_file.epw&quot;)
         atmospheric_station_pressure.append(wd.atmospheric_station_pressure)
         global_horizontal_radiation.append(wd.global_horizontal_radiation)
         direct_normal_radiation.append(wd.direct_normal_radiation)
-        diffuse_horizontal_radiation.append(wd.global_horizontal_radiation)
+        diffuse_horizontal_radiation.append(wd.diffuse_horizontal_radiation)
         wind_direction.append(wd.wind_direction)
         wind_speed.append(wd.wind_speed)
         total_sky_cover.append(wd.total_sky_cover)
         opaque_sky_cover.append(wd.opaque_sky_cover)
         precipitable_water.append(wd.precipitable_water)
-        
-    
+
     data_weather = pd.DataFrame(
         [year, month, day, hour, dry_bulb_temperature, dew_point_temperature, relative_humidity,
          atmospheric_station_pressure, global_horizontal_radiation, direct_normal_radiation, diffuse_horizontal_radiation,
          wind_direction,
          wind_speed, total_sky_cover, opaque_sky_cover, precipitable_water])
-    
+
     data_weather = data_weather.transpose()
     data_weather.columns = ['year', 'month', 'day', 'hour', 'dry_bulb_temperature', 'dew_point_temperature',
                             'relative_humidity',
                             'atmospheric_station_pressure', 'global_horizontal_radiation', 'direct_normal_radiation',
                             'diffuse_horizontal_radiation',
                             'wind_direction', 'wind_speed', 'total_sky_cover', 'opaque_sky_cover', 'precipitable_water']
-    
 
     return data_weather
 
@@ -584,28 +325,32 @@ df.head()
 
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/3.png" alt="image" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/3.png" alt="Weather DataFrame" /></p>
 
-<p>Once we have the dataframe, You can plot data directly from your DataFrame using the <strong><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html" target="_blank">plot() method</a></strong> which is function as part of the  Pandas DataFrame class</p>
+<h3>Plotting the data</h3>
 
-<p><strong><em>ploting the dry and the dew temperature</em></strong></p>
+<p>Once the data is in a DataFrame, you can plot it directly with the DataFrame&rsquo;s built-in <strong><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html" target="_blank">plot() method</a></strong>.</p>
+
+<p><strong><em>Dry-bulb and dew-point temperature</em></strong></p>
 
 <pre><code class="language-python">df[['dew_point_temperature','dry_bulb_temperature']].plot(figsize=(15,5))
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/4.png" alt="image" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/4.png" alt="Dry-bulb and dew-point temperature" /></p>
 
-<p><strong><em>Presenting the monthly data of the solar radiation</em></strong></p>
+<p><strong><em>Monthly solar radiation (kWh/m²)</em></strong></p>
 
 <pre><code class="language-python">df_month=df.groupby(['month']).sum()[['global_horizontal_radiation','direct_normal_radiation','diffuse_horizontal_radiation']]/1000
-df_month.plot(kind='bar',figsize=(15,5)) 
+df_month.plot(kind='bar',figsize=(15,5))
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/5.png" alt="image" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/5.png" alt="Monthly solar radiation" /></p>
 
-<p><strong><em>Presenting the main statistical value of the dry temperature (min, max, mean) (by month)</em></strong></p>
+<p><strong><em>Monthly minimum, mean and maximum dry-bulb temperature</em></strong></p>
 
-<pre><code class="language-python">df1=df.groupby(['month']).max()[['dry_bulb_temperature']]
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+df1=df.groupby(['month']).max()[['dry_bulb_temperature']]
 df2=df.groupby(['month']).mean()[['dry_bulb_temperature']]
 df3=df.groupby(['month']).min()[['dry_bulb_temperature']]
 ax = plt.gca()
@@ -614,193 +359,90 @@ df2.plot(figsize=(15,5),ax=ax,style='.-')
 df3.plot(figsize=(15,5),ax=ax,style='.-')
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/6.png" alt="image" /></p>
+<p><img src="https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/4/6.png" alt="Monthly dry-bulb temperature statistics" /></p>
 
     </div>
 
-    
-
-
-
-
-
 <div class="article-tags">
-  
+
   <a class="badge badge-light" href="/MyWEBSITE1/tags/python/">Python</a>
-  
+
   <a class="badge badge-light" href="/MyWEBSITE1/tags/epw/">EPW</a>
-  
+
 </div>
-
-
 
 <div class="share-box" aria-hidden="true">
   <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;text=How%20to%20consult%20EPW%20file%20with%20Python" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;text=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;t=How%20to%20consult%20EPW%20file%20with%20Python" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;t=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="mailto:?subject=How%20to%20consult%20EPW%20file%20with%20Python&amp;body=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python&amp;body=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;title=How%20to%20consult%20EPW%20file%20with%20Python" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;title=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="https://web.whatsapp.com/send?text=How%20to%20consult%20EPW%20file%20with%20Python%20https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python%20https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
-    
-      
-      
-      
-        
-      
-      
-      
+
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;title=How%20to%20consult%20EPW%20file%20with%20Python" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://habib-mezghani.github.io/MyWEBSITE1/project/how-to-consult-epw-file-with-python/&amp;title=How%20to%20Read%20and%20Edit%20EPW%20Weather%20Files%20with%20Python" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
-    
+
   </ul>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
-  
-  
   <div class="media author-card content-widget-hr">
-    
-      
+
       <img class="portrait mr-3" src="/MyWEBSITE1/authors/admin/avatar_hu00e9dcf46f44e549b44305ab4729725c_2214124_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
-    
 
     <div class="media-body">
       <h5 class="card-title"><a href="/MyWEBSITE1/authors/admin/">Habib MEZGHANI</a></h5>
       <h6 class="card-subtitle">Energy efficiency engineer</h6>
       <p class="card-text">Energy efficiency engineer, with advanced Python programming skills</p>
       <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
+
     <li>
       <a href="/MyWEBSITE1/#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
+
     <li>
       <a href="https://www.linkedin.com/in/mezghani-habib-4277aa61/" target="_blank" rel="noopener">
         <i class="fab fa-linkedin"></i>
       </a>
     </li>
-  
+
 </ul>
 
     </div>
   </div>
 
-
-
-
 <section id="comments">
-  
-    
 
-  
 </section>
-
 
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -816,9 +458,7 @@ df3.plot(figsize=(15,5),ax=ax,style='.-')
   }
   });
   MathJax.Hub.Queue(function() {
-    
-    
-    
+
     var all = MathJax.Hub.getAllJax(), i;
     for(i = 0; i < all.length; i += 1) {
         all[i].SourceElement().parentNode.className += ' has-jax';
@@ -826,99 +466,47 @@ df3.plot(figsize=(15,5),ax=ax,style='.-')
   });
 
   MathJax.Hub.Config({
-  
+
   TeX: { equationNumbers: { autoNumber: "AMS" } }
   });
 </script>
 
-
-
-
-  
-  
   <div class="article-widget content-widget-hr">
     <h3>Related</h3>
     <ul>
-      
-      <li><a href="/MyWEBSITE1/project/download-weather-file-with-python/">Download Weather file with Python </a></li>
-      
+
+      <li><a href="/MyWEBSITE1/project/download-weather-file-with-python/">Downloading EnergyPlus Weather Files with Python </a></li>
+
       <li><a href="/MyWEBSITE1/project/energy-plus-with-python/">EnergyPlus with Python</a></li>
-      
+
     </ul>
   </div>
-  
-
-
 
     <div class="project-related-pages content-widget-hr">
-      
-      
 
-      
-      
-      
-
-      
-      
-      
-
-      
-      
-      
     </div>
   </div>
 </article>
 
-      
-
-    
-    
-    
     <script src="/MyWEBSITE1/js/mathjax-config.js"></script>
-    
 
-    
-    
-    
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
-      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js" integrity="sha256-vOIuDSYDirTfyr+S2MjFnhOz6Rgiz4ODFAHATG0rFxw=" crossorigin="anonymous" title="mermaid"></script>
-      
 
-      
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-        
-      
 
-      
-      
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-      
-    
 
-    
-    
       <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
-    
 
-    
-    
     <script>hljs.initHighlightingOnLoad();</script>
-    
 
-    
-    
-    
-    
-    
-    
     <script>
       const search_config = {"indexURI":"/MyWEBSITE1/index.json","minLength":1,"threshold":0.3};
       const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
@@ -929,13 +517,7 @@ df3.plot(figsize=(15,5),ax=ax,style='.-')
         'talk' : "Talks"
         };
     </script>
-    
 
-    
-    
-
-    
-    
     <script id="search-hit-algolia-template" type="text/html">
       <div class="search-hit">
         <div class="search-hit-content">
@@ -947,68 +529,31 @@ df3.plot(figsize=(15,5),ax=ax,style='.-')
         </div>
       </div>
     </script>
-    
 
-    
-    
-
-    
-    
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.10.2/instantsearch.min.js" integrity="sha256-gFCtPk/sonctyfwYOgjrPoWApQ0rqB6ezBBZ7p32yGc=" crossorigin="anonymous"></script>
-    
+
     <script>
       const algoliaConfig = {
         appId: "",
         apiKey: "",
         indexName: "",
-        poweredBy:  false 
+        poweredBy:  false
       };
     </script>
-    
 
-    
-    
     <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
     <script src="/MyWEBSITE1/js/academic.min.a283a48777cc64d9afe2e4e815857381.js"></script>
 
-    
-
-
-
-
-
-
-  
-  
   <div class="container">
     <footer class="site-footer">
-  
 
   <p class="powered-by">
-    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
-    
     <span class="float-right" aria-hidden="true">
       <a href="#" class="back-to-top">
         <span class="button_icon">
@@ -1016,14 +561,12 @@ df3.plot(figsize=(15,5),ax=ax,style='.-')
         </span>
       </a>
     </span>
-    
+
   </p>
 </footer>
 
   </div>
-  
 
-  
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">

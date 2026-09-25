@@ -11,9 +11,9 @@
       <title>Energy Plus</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/energy-plus/</link>
     </image>
-    
+
     <item>
-      <title>Download Weather file with Python </title>
+      <title>Downloading EnergyPlus Weather Files with Python </title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/download-weather-file-with-python/</guid>
@@ -119,6 +119,6 @@ result.to_csv(&#39;EWP_data_base.csv&#39;, sep=&#39;;&#39;)
 &lt;img src=&#34;https://raw.githubusercontent.com/Habib-mezghani/MyWEBSITE1/master/img/3/6.png&#34; alt=&#34;image 6&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
-    
+
   </channel>
 </rss>

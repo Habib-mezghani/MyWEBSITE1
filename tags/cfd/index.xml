@@ -11,9 +11,9 @@
       <title>CFD</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/tags/cfd/</link>
     </image>
-    
+
     <item>
-      <title>Navier stock equation</title>
+      <title>The Navier-Stokes Equations</title>
       <link>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</link>
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0200</pubDate>
       <guid>https://habib-mezghani.github.io/MyWEBSITE1/project/navier-stocks-equation/</guid>
@@ -62,6 +62,6 @@ In fact, &lt;strong&gt;turbulence&lt;/strong&gt; remains one of the greatest uns
 Extremely high-speed computer simulations of turbulent flow could help to identify patterns that could lead to theory that organize and unifies predictions across different situations. By reaching this breakthrough, the understanding of turbulence could have huge positive impacts, as better prepare and predict weather disasters, the flow of blood through the cardiovascular system, the airflow over an aircraft wing&amp;hellip;..&lt;/p&gt;
 </description>
     </item>
-    
+
   </channel>
 </rss>
